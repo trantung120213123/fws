@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cờ vua — chơi vs Stockfish (WASM)</title>
+
+  <!-- Chessboard.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/www/css/chessboard.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Chơi vs Stockfish (WASM)</h1>
+      <div class="controls">
+        <button id="newBtn">New Game</button>
+        <button id="undoBtn">Undo</button>
+        <button id="flipBtn">Flip</button>
+
+        <label>Difficulty
+          <select id="level">
+            <option value="1">Easy</option>
+            <option value="3" selected>Normal</option>
+            <option value="8">Hard</option>
+            <option value="15">Very Hard</option>
+          </select>
+        </label>
+
+        <label>Move time (ms)
+          <input id="movetime" type="number" value="200" min="50" step="50" />
+        </label>
+
+        <label><input type="checkbox" id="autoPlay" checked /> Computer plays Black</label>
+      </div>
+    </header>
+
+    <main>
+      <div id="board" class="board"></div>
+
+      <aside class="rightpanel">
+        <div class="status" id="status">Status: ready</div>
+        <div class="fen" id="fen">FEN: -</div>
+        <div class="pgn" id="pgn">PGN: -</div>
+
+        <div class="moves">
+          <h3>Move list</h3>
+          <ol id="movelist"></ol>
+        </div>
+
+        <div class="engine-console">
+          <h3>Engine log</h3>
+          <pre id="engineLog" class="log"></pre>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <small>Ghi chú: tải file Stockfish WASM/JS (ví dụ stockfish.js) vào cùng thư mục.</small>
+    </footer>
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0/lib/chess.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/www/js/chessboard.min.js"></script>
+
+  <!-- Stockfish Worker (bạn cần đặt file này trong cùng folder). Tên file mặc định: stockfish.js -->
+  <script>
+    // Không tải stockfish ở đây — script.js sẽ tạo Worker('stockfish.js')
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
