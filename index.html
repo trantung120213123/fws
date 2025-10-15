@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cờ vua — chơi vs Stockfish (WASM)</title>
+  <title>Chơi cờ vs Stockfish (WASM)</title>
 
   <!-- Chessboard.js CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/www/css/chessboard.min.css" />
@@ -56,7 +56,7 @@
     </main>
 
     <footer>
-      <small>Ghi chú: tải file Stockfish WASM/JS (ví dụ stockfish.js) vào cùng thư mục.</small>
+      <small>Đặt <code>stockfish.js</code> và <code>stockfish.wasm</code> (hoặc <code>stockfish.worker.js</code>) trong cùng thư mục với các file này.</small>
     </footer>
   </div>
 
@@ -64,11 +64,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0/lib/chess.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/www/js/chessboard.min.js"></script>
 
-  <!-- Stockfish Worker (bạn cần đặt file này trong cùng folder). Tên file mặc định: stockfish.js -->
-  <script>
-    // Không tải stockfish ở đây — script.js sẽ tạo Worker('stockfish.js')
-  </script>
-
+  <!-- Main logic -->
   <script src="script.js"></script>
 </body>
 </html>
